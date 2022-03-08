@@ -6,23 +6,38 @@
     <style>
 
         #one {
-            background: blue;
-            width:      100px;
-            height:     100px;
+            background:   transparent;
+            width:        0;
+            height:       0;
+            border-style: solid;
+            border-width: 50px 0 50px 100px;
+            border-color: transparent transparent transparent blue;
+            filter:       drop-shadow(0 0 1em);
         }
 
         #two {
-            background: red;
-            width:      100px;
-            height:     100px;
+            background-color: red;
+            width:            100px;
+            height:           100px;
+            clip-path:        polygon(0 0, 100% 50%, 0 100%);
+            box-shadow:       inset 1px 1px 1em 0 black;
+        }
+
+        #three {
+            background-color: transparent;
+            width:            100px;
+            height:           100px;
+            background-image: linear-gradient(45deg, green 70px, transparent 70px);
+            transform:        rotate(225deg) translate(15px, -30px);
         }
 
     </style>
 </head>
 <body>
 
-<div id="one"> </div>
-<div id="two"> </div>
+<div id="one"></div>
+<div id="two"></div>
+<div id="three"></div>
 
 </body>
 </html>

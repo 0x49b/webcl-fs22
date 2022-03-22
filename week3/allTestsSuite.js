@@ -10,4 +10,6 @@ import './church/rockTest.js'
 import './dataflow/dataflowTest.js'
 import './todo/todoTest.js'
 
+
 import './presentationModel/presentationModelTest.js'
+import './todo/todoControllerTest.js'

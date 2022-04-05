@@ -6,32 +6,60 @@
     <style>
 
         :root {
-            margin:     0;
-            padding:    0;
-            box-sizing: border-box;
+            margin:      0;
+            padding:     0;
+            box-sizing:  border-box;
             font-family: "Helvetica Neue", "sans-serif";
         }
 
         main {
-            display: flex;
-            flex-direction: column;
+            display:         flex;
+            flex-direction:  column;
             justify-content: center;
-            min-height: 100vh;
-            align-items: center;
+            min-height:      100vh;
+            align-items:     center;
         }
 
         .rainbow {
-            color: white;
-            font-weight: bold;
+            color:           white;
+            font-weight:     bold;
             text-decoration: none;
-            text-transform: uppercase;
-            background: #9ae69c88;
-            padding: 1em;
-            border-radius: 2em;
+            text-transform:  uppercase;
+            background:      #09ae6966;
+            padding:         1em;
+            border-radius:   2em;
+            position:        relative;
+            /*box-shadow:      0 0 1px 5px violet,
+                             0 0 1px 10px indigo,
+                             0 0 1px 15px blue,
+                             0 0 1px 20px green,
+                             0 0 1px 25px yellow,
+                             0 0 1px 30px orange,
+                             0 0 1px 35px red;
+                             */
         }
 
         /* todo: make a rainbow-colored shadow by blurring a positioned background */
+        .rainbow::before {
+            content:          "";
+            position:         absolute;
+            inset:            -.3em;
+            border-radius:    inherit;
+            filter:           blur(.4em);
+            z-index:          -1;
+        }
 
+        .rainbow::before {
+            background-image: linear-gradient(to right,
+            violet,
+            indigo,
+            blue,
+            green,
+            yellow,
+            orange,
+            red,
+            purple);
+        }
 
     </style>
 </head>
@@ -43,7 +71,6 @@
         <a class="rainbow" href="#">Button</a>
     </div>
 </main>
-
 
 
 </body>

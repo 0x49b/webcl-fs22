@@ -1,15 +1,14 @@
-
-import { ListController, SelectionController,  } from './controller.js';
+import { ListController, SelectionController, } from './controller.js';
 import { MasterView, DetailView, Person, NoPerson } from './person.js';
-import { Suite }                from "../test/test.js";
+import { Suite } from "../test/test.js";
 
 const personSuite = Suite("person");
 
 personSuite.add("crud", assert => {
 
     // setup
-    const masterContainer = document.createElement("div");
-    const detailContainer = document.createElement("div");
+    const masterContainer     = document.createElement("div");
+    const detailContainer     = document.createElement("div");
     detailContainer.innerHTML = "<div>to replace</div>";
 
     const masterController    = ListController(Person);
@@ -22,22 +21,22 @@ personSuite.add("crud", assert => {
 
     const elementsPerRow = 3;
 
-    assert.is(masterContainer.children.length, 0*elementsPerRow);
+    assert.is(masterContainer.children.length, 0 * elementsPerRow);
 
     masterController.addModel();
 
-    assert.is(masterContainer.children.length, 1*elementsPerRow);
+    assert.is(masterContainer.children.length, 1 * elementsPerRow);
 
     masterController.addModel();
 
-    assert.is(masterContainer.children.length, 2*elementsPerRow);
+    assert.is(masterContainer.children.length, 2 * elementsPerRow);
 
-    const firstInput = masterContainer.querySelectorAll("input[type=text]")[0];
+    const firstInput        = masterContainer.querySelectorAll("input[type=text]")[0];
     const firstDeleteButton = masterContainer.querySelectorAll("button")[0];
 
     firstDeleteButton.click();
 
-    assert.is(masterContainer.children.length, 1*elementsPerRow);
+    assert.is(masterContainer.children.length, 1 * elementsPerRow);
 
 
 });

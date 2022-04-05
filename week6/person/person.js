@@ -1,11 +1,11 @@
-import { Attribute, LABEL }                                 from "../presentationModel/presentationModel.js";
+import { Attribute, LABEL } from "../presentationModel/presentationModel.js";
 //import { listItemProjector, formProjector, pageCss }        from "./instantUpdateProjector.js";
-import { listItemProjector, formProjector, pageCss }        from "./tableProjector.js";
+import { listItemProjector, formProjector, pageCss } from "./tableProjector.js";
 
 export { MasterView, DetailView, Person, NoPerson, ALL_ATTRIBUTE_NAMES }
 
 // page-style change, only executed once
-const style = document.createElement("STYLE");
+const style     = document.createElement("STYLE");
 style.innerHTML = pageCss;
 document.head.appendChild(style);
 
@@ -15,7 +15,7 @@ const Person = () => {                               // facade
     const firstnameAttr = Attribute("Monika");
     firstnameAttr.getObs(LABEL).setValue("First Name");
 
-    const lastnameAttr  = Attribute("Mustermann");
+    const lastnameAttr = Attribute("Mustermann");
     lastnameAttr.getObs(LABEL).setValue("Last Name");
 
     // 1) commented out since we do not use this at the moment
@@ -24,8 +24,8 @@ const Person = () => {                               // facade
     // lastnameAttr.setValidator( input => input.length >= 3   );
 
     return {
-        firstname:          firstnameAttr,
-        lastname:           lastnameAttr,
+        firstname: firstnameAttr,
+        lastname : lastnameAttr,
     }
 };
 
